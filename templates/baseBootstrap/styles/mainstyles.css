@@ -1,0 +1,8 @@
+:root {
+    --mainC: #008062;
+}
+body{
+    background-color: var(--mainC);
+    background-image: url("../images/studio.jpg");
+    background-size: cover;
+}
