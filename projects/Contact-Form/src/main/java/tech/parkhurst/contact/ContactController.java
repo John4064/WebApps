@@ -17,17 +17,20 @@ public class ContactController {
     //it to our model object, when we return greeting.html it uses our model we
     //can call greeting.content for example. more info: https://zetcode.com/springboot/model/
 
-    @GetMapping("/greeting")
+    @GetMapping("/contact")
     public String greetingForm(Model model) {
         model.addAttribute("mycontact", new Contact());
         return "greeting";
     }
 
-    @PostMapping("/greeting")
+    @PostMapping("/contact")
     public String greetingSubmit(@ModelAttribute Contact mycontact, Model model) {
         model.addAttribute("mycontact", mycontact);
         return "result";
     }
-
+    @GetMapping("/error")
+    public String catchErr() {
+        return "error";
+    }
 
 }

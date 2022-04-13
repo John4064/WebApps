@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Tidal Contact Form</title>
+    <title>John's Contact Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../static/styles/mainstyles.css">
 </head>
 <body>
 <h1>Contact Form</h1>
-<form action="#" th:action="@{/greeting}" th:object="${mycontact}" method="post">
+<form action="#" th:action="@{/contact}" th:object="${mycontact}" method="post">
     <p>Name: <input type="text" th:field="*{name}" /></p>
     <p>Age: <input type="text" th:field="*{age}" /></p>
     <p>Email: <input type="text" th:field="*{emailAdd}" /></p>
