@@ -15,7 +15,8 @@ app.get('/', function(req, res) {
 });
 app.post('/calc', function (req, res) {
     var name = req.body.val + ' ' + req.body.favored;
-
+    //Calculation occurs here
+    //send the final value to html
     res.send(name + ' Submitted Successfully!');
 });
 app.listen(port, () => {
