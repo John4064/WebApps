@@ -14,9 +14,15 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1>res.sendFile() Works!</h1>
+    <h1>Betting Odds Calculator</h1>
   </div>
 </div>
-<p>Hello</p>
+<div class="container">
+  <form action="/calc" method="post">
+    Value: <input name="val" type="text" /> <br />
+    Favored: <input name="favored" type="text" /> <br />
+    <input type="submit" />
+  </form>
+</div>
 </body>
 </html>
