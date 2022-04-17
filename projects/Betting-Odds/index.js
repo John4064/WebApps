@@ -14,7 +14,8 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 app.post('/calc', function (req, res) {
-    var name = req.body.val + ' ' + req.body.favored;
+    var name = req.body.val + ' ' + req.body.odds;
+    //Need to parse odds to get + or - and the value
     //Calculation occurs here
     //send the final value to html
     res.send(name + ' Submitted Successfully!');
