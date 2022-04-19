@@ -22,12 +22,8 @@ function convertor(value, odds, favored){
     }else if (favored==='-'){
         //need to get module
         return Math.round(100.0/odds*value);
-    }else{
-        return -1234;
     }
 }
-
-
 
 // sendFile will go here
 app.get('/', function(req, res) {
@@ -40,13 +36,14 @@ app.post('/calc', function (req, res) {
     //send the final value to html
     if(req.body.favored === 'pos'){
         res.send( Number(convertor(req.body.val, req.body.odds,'+')) +Number(req.body.val) + ' Would be the total payout!');
-
     }else if(req.body.favored === 'neg'){
         res.send( Number(convertor(req.body.val, req.body.odds,'-')) +Number(req.body.val) + ' Would be the total payout!');
     }else{
-        res.send("Remeber to specify if the bet is favored or not!");
+        res.send("Remember to specify if the bet is favored or not!");
     }
+    res.end();
 });
+
 app.listen(port, () => {
     console.log(`App running on: ${port}`);
 })
