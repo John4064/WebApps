@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import tech.parkhurst.contact.EmailHandler.*;
 @Controller
 public class ContactController {
 
@@ -26,6 +26,8 @@ public class ContactController {
     @PostMapping("/contact")
     public String greetingSubmit(@ModelAttribute Contact mycontact, Model model) {
         model.addAttribute("mycontact", mycontact);
+        System.out.println(mycontact.getEmailAdd());
+        EmailHandler.sendEmail(mycontact.getEmailAdd(),mycontact.getName(),mycontact.getAge());
         return "result";
     }
     @GetMapping("/error")
