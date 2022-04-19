@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
+//import {convertor} from './src/calc/convertor.js';
+var convert = require('./src/calc/convertor.js');
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +20,8 @@ app.post('/calc', function (req, res) {
     //Need to parse odds to get + or - and the value
     //Calculation occurs here
     //send the final value to html
-    res.send(name + ' Submitted Successfully!');
+    console.log("test");
+    res.send(convert.constructor(req.body.val, req.body.odds,'-') + ' Submitted Successfully!');
 });
 app.listen(port, () => {
     console.log(`App running on: ${port}`);
