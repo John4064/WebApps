@@ -4,6 +4,7 @@ This is a collection of multiple web apps and web apps templates created be me. 
 
 
 # Projects
+Under projects you can find a multitude of web app projects I have created
 ## Betting Odds Calculator
 Simple express web application to calculate the total winnings of a wager.
 ## Contact Form
