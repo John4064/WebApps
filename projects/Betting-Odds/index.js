@@ -4,11 +4,29 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
-//import {convertor} from './src/calc/convertor.js';
-var convert = require('./src/calc/convertor.js');
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
+
+/**
+ * @param value $monetary value to be wagered
+ * @param odds What are the odds of the wager
+ * @param favored char either + or -
+ * @returns {number} returns the  amount of money won if the bet is win
+ */
+function convertor(value, odds, favored){
+    //means an underdog aka
+    if(favored==='+'){
+        return Math.round(odds/100.0*value);
+        //Means a favorite aka -140 is 140 to win 100
+    }else if (favored==='-'){
+        //need to get module
+        return Math.round(100.0/odds*value);
+    }else{
+        return -1234;
+    }
+}
+
 
 
 // sendFile will go here
@@ -20,8 +38,14 @@ app.post('/calc', function (req, res) {
     //Need to parse odds to get + or - and the value
     //Calculation occurs here
     //send the final value to html
-    console.log("test");
-    res.send(convert.constructor(req.body.val, req.body.odds,'-') + ' Submitted Successfully!');
+    if(req.body.favored === 'pos'){
+        res.send( Number(convertor(req.body.val, req.body.odds,'+')) +Number(req.body.val) + ' Would be the total payout!');
+
+    }else if(req.body.favored === 'neg'){
+        res.send( Number(convertor(req.body.val, req.body.odds,'-')) +Number(req.body.val) + ' Would be the total payout!');
+    }else{
+        res.send("Remeber to specify if the bet is favored or not!");
+    }
 });
 app.listen(port, () => {
     console.log(`App running on: ${port}`);

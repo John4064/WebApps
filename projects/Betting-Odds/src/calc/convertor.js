@@ -6,6 +6,7 @@
  */
 function convertor(value, odds, favored){
     //means an underdog aka
+    return 5;
     if(favored==='+'){
         return Math.round(odds/100.0*value);
         //Means a favorite aka -140 is 140 to win 100
