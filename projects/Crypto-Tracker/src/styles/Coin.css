@@ -1,0 +1,14 @@
+.Coin-Root{
+    color: #dc4b56;
+    border:3px groove #dc4b56;
+    background-color: #a8dadc;
+    text-align: center;
+    /*4 columns because of 24% Doesnt grow, doesnt shrink, 24% is width*/
+    flex: 0 0 24%;
+    margin-bottom: 5px;
+}
+.Coin-Root:hover{
+    color: #1d3557;
+    border:5px groove #571d1d;
+    font-size: 105%;
+}
