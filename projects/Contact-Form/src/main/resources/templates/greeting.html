@@ -3,8 +3,7 @@
 <head>
     <title>John's Contact Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="../static/styles/mainstyles.css">
-</head>
+    <link th:href="@{/styles/mainstyles.css}" rel="stylesheet" /></head>
 <body>
 <h1>Contact Form</h1>
 <form action="#" th:action="@{/contact}" th:object="${mycontact}" method="post">
