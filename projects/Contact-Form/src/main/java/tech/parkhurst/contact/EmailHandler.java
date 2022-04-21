@@ -40,7 +40,7 @@ public class EmailHandler {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(address));
             // Set Subject: header field
             message.setSubject("To %s".formatted(name));
-            message.setText("Welcome to the test realm we are contacting you about information! We also were told your age was %d".formatted(age));
+            message.setText("Hello %s we are reaching out in regards to the contact form you filled out! We know you are %d from the form and this is just an automated message!".formatted(name,age));
             message.setSentDate(new Date());
             //Send Here
             Transport.send(message);
