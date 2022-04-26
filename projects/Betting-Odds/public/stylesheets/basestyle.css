@@ -1,4 +1,7 @@
-html{
+:root {
+    --mainC: #008062;
+}
+body{
+    background: var(--mainC);
 
-    color: red;
 }
